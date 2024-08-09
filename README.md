@@ -132,7 +132,7 @@ The core of the TunnelPrime service is a script designed to listen for incoming 
 
 For the TunnelPrime service to function seemlessly, several key configurations were made to the SSH server configuration file (`/etc/ssh/sshd_config`).
 
-#### 1. Enable TCP Forwarding
+#### Enable TCP Forwarding
 - **Purpose**: Allow the SSH server to support SSH reverse tunneling by forwarding ports from the local machine to the remote host.
 - **Configuration**: Add the following lines to `sshd_config`:
   ```bash
@@ -140,28 +140,28 @@ For the TunnelPrime service to function seemlessly, several key configurations w
   GatewayPorts yes
   ```
 
-#### 2. Permit User Environment
+#### Permit User Environment
 - **Purpose**: Allows the SSH server to execute custom scripts or commands upon user login using environment variables.
 - **Configuration**: Enable this feature by adding:
   ```bash
   PermitUserEnvironment yes
   ```
 
-#### 3. Disable Password Authentication
+#### Disable Password Authentication
 - **Purpose**: Bypasses the need for password entry during the tunneling setup, streamlining the connection process.
 - **Configuration**: Disable password authentication with:
   ```bash
   PasswordAuthentication no
   ```
 
-#### 4. Force Command Execution
+#### Force Command Execution
 - **Purpose**: Automatically executes the TunnelPrime script whenever a user connects via SSH.
 - **Configuration**: Add the following line:
   ```bash
   ForceCommand /usr/local/bin/tunnel_service.sh
   ```
 
-#### 5. Restart the SSH Service
+#### Restart the SSH Service
 - **Purpose**: Apply the new configurations by restarting the SSH service.
 - **Command**: 
   ```bash
