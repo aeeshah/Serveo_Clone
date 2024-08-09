@@ -175,7 +175,7 @@ These configurations ensure that the SSH server is fully prepared to handle the 
 The user on the local machine can establish a tunnel to TunnelPrime using the following SSH command:
 
 ```bash
-ssh -R 80:localhost:3000 tunnelprime_user@your_server_ip
+ssh -R 8080:localhost:3000 server@tunnelprime.online
 ```
 
 This command forwards the local port `3000` to port `80` on the TunnelPrime server, making the local application accessible via the provided subdomain.
